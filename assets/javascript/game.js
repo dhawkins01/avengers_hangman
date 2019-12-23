@@ -4,6 +4,7 @@ var words = ["iron man", "spider man", "hulk", "captain america", "thanos", "tho
 "tony stark", "peter parker", "steve rogers", "winter soldier"];
 
 var lettersGuessed = ["a", "b","t"];
+var answerArray = [];
 
 // starting variables
 var wins = 0;
@@ -19,32 +20,26 @@ lettersRemaining.textContent = guessesRemaining;
 winCount.textContent = wins;
 guessedLetters.textContent = lettersGuessed;
 
-
-
-
-// display word on the screen represented by underscores
-displayWord();
-
-
-
-// function declaration
-
-function displayWord(){
-    
-    for(var i = 0; i < randomWord.length; i++){
-        if(randomWord[i] === " ") {
-            winningWord.innerHTML += "&nbsp";
-        } else {
-            winningWord.textContent += "_ "
-        }
-    }
+for(i = 0; i < randomWord.length; i++) {
+    answerArray[i] = "_";
 }
+
+console.log(answerArray);
+
+
 
 document.onkeyup = function(event){
     var userGuess = event.key;
     console.log(userGuess);
     guessesRemaining--;
     lettersRemaining.textContent = guessesRemaining;
+    console.log(winningWord);
+
+    for(var i = 0; i < randomWord.length; i++){
+        if(userGuess === randomWord[i]){
+            
+        }
+    }
 
 
 }
